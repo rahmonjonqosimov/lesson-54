@@ -46,10 +46,10 @@ function createTodoList(data) {
   data.forEach((el, i) => {
     let li = document.createElement("li");
     li.innerHTML = `
-    <label class="check" for="${el.id}"> 
-    <input type="checkbox" class="input-checked" id="${el.id}" /> 
-    ${el.name}
-    </label>
+    <div class="check1" >
+    <input type="checkbox" class="input-checked" id="${el.id}" />
+    <label title="${el.name}" class="check"  for="${el.id}">${el.name}</label>
+    </div>
     <div class="clock">
     <h4> ${el.time}</h4>
     <button class="btn" onclick="deleteTodoList(${i}), dec()" > <img src="./images/bx-x.svg" alt="bx-x"></button>

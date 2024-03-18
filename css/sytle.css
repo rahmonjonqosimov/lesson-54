@@ -66,9 +66,15 @@ ul {
   list-style: none;
 }
 .check {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.check1 {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  width: 300px;
 }
 .show {
   display: flex;
@@ -94,15 +100,13 @@ ul {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 206px;
 }
 .input-checked {
   width: 15px;
   height: 15px;
   transition: 0.3s linear;
   cursor: pointer;
-}
-.input-checked:hover {
-  transform: scale(1.1);
 }
 
 .clear {
