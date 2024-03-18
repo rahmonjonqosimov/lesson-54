@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(../images/bg-1.webp);
+  background-image: url(../images/gkjd.png);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: sans-serif;
@@ -134,5 +134,19 @@ ul {
   justify-content: space-between;
 }
 .text h4 {
+  color: rgba(97, 90, 90, 0.99);
+}
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.clock span {
+  font-weight: 700;
   color: rgba(97, 90, 90, 0.99);
 }

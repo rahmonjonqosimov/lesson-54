@@ -112,3 +112,22 @@ function dec() {
     maxsulotSoni.innerHTML = count;
   }
 }
+
+const soat = document.querySelector(".soat");
+const minut = document.querySelector(".minut");
+const second = document.querySelector(".second");
+setInterval(() => {
+  let hozirgiVaqt = new Date();
+  soat.innerHTML =
+    hozirgiVaqt.getHours() < 10
+      ? "0" + hozirgiVaqt.getHours()
+      : hozirgiVaqt.getHours();
+  minut.innerHTML =
+    hozirgiVaqt.getMinutes() < 10
+      ? "0" + hozirgiVaqt.getMinutes()
+      : hozirgiVaqt.getMinutes();
+  second.innerHTML =
+    hozirgiVaqt.getSeconds() < 10
+      ? "0" + hozirgiVaqt.getSeconds()
+      : hozirgiVaqt.getSeconds();
+}, Number.POSITIVE_INFINITY);
