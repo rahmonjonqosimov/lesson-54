@@ -3,10 +3,12 @@ const btnAdd = document.querySelector(".btn-add");
 const todo = document.querySelector(".todo-list-content");
 const form = document.querySelector(".form");
 const btn = document.querySelector("input-checked");
+const maxsulotSoni = document.querySelector(".count");
+let count = 0;
 let DATA = [];
 
 class Prodact {
-  constructor(name, valid) {
+  constructor(name) {
     this.id = `id-${new Date().getTime()}`;
     this.name = name;
     this.time = ` ${new Date().getFullYear()}.${
@@ -34,9 +36,10 @@ form.addEventListener("submit", (event) => {
   let newObj = new Prodact(todoList.value);
   DATA.push(newObj);
   createTodoList(DATA);
-
   console.log(DATA);
   todoList.value = "";
+  count++;
+  maxsulotSoni.innerHTML = count;
 });
 function createTodoList(data) {
   while (todo.firstChild) {
@@ -52,7 +55,7 @@ function createTodoList(data) {
     </div>
     <div class="clock">
     <h4> ${el.time}</h4>
-    <button class="btn" onclick="deleteTodoList(${i}), dec()" > <img src="./images/bx-x.svg" alt="bx-x"></button>
+    <button class="btn" onclic="dec()" onclick="deleteTodoList(${i}), dec()" > <img src="./images/bx-x.svg" alt="bx-x"></button>
     </div>
     `;
     let hr = document.createElement("hr");
@@ -76,7 +79,36 @@ todo.addEventListener("change", (event) => {
   let check = event.target;
   if (check.checked) {
     labelVale.style.textDecoration = "line-through";
+    labelVale.style.color = "#1266F1";
   } else {
     labelVale.style.textDecoration = "none";
+    labelVale.style.color = "black";
   }
 });
+
+const clear = document.querySelector(".clear");
+
+clear.addEventListener("click", (event) => {
+  while (todo.firstChild) {
+    todo.firstChild.remove();
+  }
+  function clearProdacts(data) {
+    {
+      DATA = [];
+    }
+  }
+  clearProdacts(DATA);
+  todoList.value = "";
+});
+
+form.addEventListener("submit", () => {});
+clear.addEventListener("click", () => {
+  count = 0;
+  maxsulotSoni.innerHTML = count;
+});
+function dec() {
+  if (count > 0) {
+    count--;
+    maxsulotSoni.innerHTML = count;
+  }
+}
